@@ -1,0 +1,815 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ldes: <https://w3id.org/ldes#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://w3id.org/ldes/ldes#> a ldes:ApiEntryPoint ;
+    ldes:hasEntryPoint <https://w3id.org/ldes/ldes#entrypoint> .
+
+<http://vocab.nerc.ac.uk/collection/P01/current/F1319DI6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/F19DIDE1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/F19DIDE7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/F319DID3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/F9DIDES1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/F9DIDES3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FALYTIC9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FARALYT7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FATOXIN4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FATOXIN5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FATOXIN6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FATOXIN7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FBTHYLS0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FCSHELL3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FDESMET8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FDOMOIC7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FELLFIS6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FELLFIS7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIAT81/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIATO0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIATO1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIATO5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIATO6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FERIATO9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FETHYLS0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FETHYLS1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FETHYLS9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHELLFI6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHELLFI9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHTOXIN8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHYLCHR8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHYLSPI0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHYLSPI3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHYLSPI6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FHYLSPI7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIATOXI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIATOXI3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIATOXI6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIATOXI7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIATOXI9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FICSHEL1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIDESME9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FIQTOXI7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLFISHT6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLSPIRO8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLSPIRO9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLYTICS0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLYTICS4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FLYTICS9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FMETHYL4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FMETHYL5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FOICACI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPIROLI3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPIROLQ8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERI69/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERIA2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERIA4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERIA5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERIA8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FPTERIA9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FRALYT13/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FRALYTI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FRALYTI3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FRIATOX5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSHELLF0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSHELLF3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSHTOXI9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSMETHY2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSPI9OL9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSPIRO79/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FSPIROQ7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIA59/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIA71/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTERIAT9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTHYLSP3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTHYLSP4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FTHYLSP5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FYLSPIR2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FYLSPIR5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/FYTICSH2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 15:47:56.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NATOXIN1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NATOXIN4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NATOXIN6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NATOXIN7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NERIATO2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NERIATO4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NERIATO7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NIATOXI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NIATOXI3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NIATOXI4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NIATOXI5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NPTERIA1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NPTERIA7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NRIATOX4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NRIATOX9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NTERIAT3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NTERIAT7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/NTERIAT9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/P3MICRO4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/P3MICRO7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PATOXIN5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PATOXIN6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PATOXIN9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PCROCYS4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PCYSTIN7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PDESMET0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PDESMET1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PDESMET2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PDESMET9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PDOMOIC3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PERIATO9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESMETH4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESMETH5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESSOTO0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESSOTO1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESSOTO2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PESSOTO8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PETHYL39/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PIATOXI9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PICROCY6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PL3MICR2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PL3MICR3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PL3MICR7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PMETHYL2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PMICROC1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/POCYSTI2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/POTOXIN3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/POTOXIN4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/POTOXIN7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PPTERIA9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PRIATOX8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PROCYST2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSMETHY1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSMETHY5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSOTOXI1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSOTOXI4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSOTOXI5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PSSOTOX8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTERIAT9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTHYL3M2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTHYL3M3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTHYL3M4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTHYL3M9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTTOXIN0/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTTOXIN1/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTTOXIN3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTTOXIN4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PTTOXIN7/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT2/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT4/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYESSOT9/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYL3MIC5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYL3MIC8/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYSTINR3/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYSTINR5/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P01/current/PYSTINR6/>
+    a skos:Concept ;
+    dcat:modified "2023-12-14 14:47:12.0"^^xsd:dateTime ;
+    .
