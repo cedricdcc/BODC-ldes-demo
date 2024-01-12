@@ -14,8 +14,17 @@
     ldes:hasEntryPoint <https://w3id.org/ldes/ldes#entrypoint> .
 
 {% for result in sets['qres'] -%}
-<{{result.id.value}}>
+<http://vocab.nerc.ac.uk/ldes/feed/{{result.date}}>
+ a tree:Node ;
+ tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/{{result.previous_date}}> ] ;
+ ldes:retentionPolicy [
+    a ldes:TimeBasedRetentionPolicy ;
+    ldes:timeBasedRetentionPeriod "{{retention_period}}"^^xsd:duration ;
+ ].
+{% for change in result.results -%}
+<{{change.id.value}}>
     a skos:Concept ;
-    dcat:modified "{{result.modified.value}}"^^xsd:dateTime ;
+    dcat:modified "{{change.modified.value}}"^^xsd:dateTime ;
     .
+{% endfor %}
 {% endfor %}

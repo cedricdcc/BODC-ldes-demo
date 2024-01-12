@@ -111,6 +111,7 @@ new_array = []
 # loop through the date array
 for date in date_array:
     next_date = date - datetime.timedelta(hours=1)
+    following_date = date - datetime.timedelta(hours=2)
     # print(date)
     # print(next_date)
     # create a new array to store the results for that date
@@ -134,7 +135,11 @@ for date in date_array:
     # add the date results array to the new array
     if len(date_results) > 0:
         date_str = str(next_date)+ "-" + str(date)
-        new_array.append({"date": date_str,"results":date_results})
+        # convert str to uri compatible
+        date_str_uri = urllib.parse.quote(date_str)
+        previous_date = str(following_date) + "-" + str(next_date)
+        previous_date_uri = urllib.parse.quote(previous_date)
+        new_array.append({"date": date_str_uri,"results":date_results, "previous_date": previous_date_uri})
         print(len(date_results))
 
 print(len(new_array))
@@ -142,6 +147,14 @@ print(len(new_array))
 # write array to file as json
 with open(os.path.join(WD,"BODC_LDES_demo_sorted.json"), "w") as f:
     json.dump(new_array, f, indent=4)
+
+# execute the following command 
+# delete the metadata.ttl file if it exists
+# python -m pysubyt -t ./pysubyt -s qres BODC_LDES_demo_sorted.json -n metadata.ttl -o metadata.ttl
+if os.path.exists(os.path.join(WD,"metadata.ttl")):
+    os.remove(os.path.join(WD,"metadata.ttl"))
+
+os.system("python -m pysubyt -t ./pysubyt -s qres BODC_LDES_demo_sorted.json -n metadata.ttl -o metadata.ttl")
 
 
 
