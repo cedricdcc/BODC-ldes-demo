@@ -3,159 +3,156 @@
 import requests
 import urllib.parse
 import json
+import time
 import sys
 import os
 import datetime
+import pykg2tbl
+from pandas import DataFrame
+
+# define variables
+collections = ["P01","P02","P03"]
+begin_date = "2012-01-01 00:00:00"
+end_date = "2021-01-02 00:00:00"
+retention_period = 1
 
 # define constants
-
 ENDPOINT = "http://vocab.nerc.ac.uk/sparql/sparql"
-WD = os.path.dirname(os.path.realpath(__file__))
-QUERY = """
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX dcat: <http://www.w3.org/ns/dcat#>
-    PREFIX dcterms: <http://purl.org/dc/terms/>
-    PREFIX skosc: <http://www.w3.org/2004/02/skos/core#>
-    SELECT ?id ?sid ?version ?modified WHERE {
-        ?id rdf:type skosc:Concept .
-        ?id dcterms:identifier ?sid .
-        ?id dcterms:date ?modified .
-        ?id <http://purl.org/pav/hasCurrentVersion> ?version
-    }
-    ORDER BY DESC(?modified)
-    LIMIT 1500
-    """
+PYKG2TBL_OUTPUT_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "output_pykg2tbl")
+PYSUBYT_OUTPUT_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "output_pysubyt")
+KGSOURCE = pykg2tbl.KGSource.build(ENDPOINT)
+TEMPLATES_FOLDER_PYKG2TBL = os.path.join(os.path.dirname(os.path.realpath(__file__)), "pykg2tbl")
+TEMPLATES_FOLDER_PYSUBYT = os.path.join(os.path.dirname(os.path.realpath(__file__)), "pysubyt")
+GENERATOR = pykg2tbl.DefaultSparqlBuilder(templates_folder=TEMPLATES_FOLDER_PYKG2TBL)
 
 # demo url http://vocab.nerc.ac.uk/sparql/sparql?query={YOUR_QUERY_URL_ENCODED}
 
-def get_triples(query:str):
+def generate_sparql(name:str, **vars):
     """
-    Get triples from the endpoint
+    Generate a SPARQL query from a template
     """
-    
-    # make sure the query is url endcoded
-    encoded_query = urllib.parse.quote(query)
-    
-    params = {
-        "Accept": "application/sparql-results+json"
-    }
-    URL = ENDPOINT + "?query=" + encoded_query
-    response = requests.get(URL, params=params)
-    if response.status_code != 200:
-        print("Error: SPARQL query failed")
-        print(response.text)
-        sys.exit(1)
-    return response.json()
+    return GENERATOR.build_syntax(name, **vars)
+
+def execute_to_df(name: str, **vars) -> DataFrame:
+    """ Builds the sparql and executes, returning the result as a dataframe.
+    """
+    sparql = generate_sparql(name, **vars)
+    result: QueryResult = KGSOURCE.query(sparql)
+    return result.to_dataframe()
 
 '''
-print("Querying the endpoint...")
-results = get_triples(QUERY)
-print("Got {} results.".format(len(results["results"]["bindings"])))
-print("Writing to file...")
+# test the sparql query
+# date should be in %Y-%m-%d %H:%M:%S
 
+print(
+    generate_sparql(
+        "collection-changes-between-delta-period.sparql",
+        collection= "P02",
+        date1= "2012-01-01 00:00:00",
+        date2= "2021-01-02 00:00:00"
+    )
+)
 
+DATAFRAME = execute_to_df(
+    "collection-changes-between-delta-period.sparql",
+    collection= "P02",
+    date1= "2012-01-01 00:00:00",
+    date2= "2021-01-02 00:00:00"
+)
 
-with open(os.path.join(WD,"BODC_LDES_demo.json"), "w") as f:
-    json.dump(results["results"]["bindings"], f, indent=4)
-
-r_array = results["results"]["bindings"] if results else None
+print(DATAFRAME)
 '''
 
-with open(os.path.join(WD,"BODC_LDES_demo.json"), "r") as f:
-    # read in the file
-    r_array = json.load(f)
+def make_json(DATAFRAME):
+    # convert dataframe to json
+    json_records = DATAFRAME.to_json(orient='records')
+    # format the json
+    json_records = json.loads(json_records)
+    # print(json_records)
+    return json_records
 
-# print(r_array)
-        
-# split up the result array so that the content is sorted by day
-# if no results are found for a day, the day will not be included in the array
+def save_json(json_records, collection, begin_date, end_date):
+    name = collection + "_" + begin_date + "_" + end_date + ".json"
+    #make sure the name is safe to write to file
+    name = name.replace(":", "-")
+    name = name.replace("-", "_")
+    name = name.replace(" ", "_")
+    
+    # save json to file
+    with open(os.path.join(PYKG2TBL_OUTPUT_FOLDER, name), 'w') as outfile:
+        json.dump(json_records, outfile)
+    return os.path.join(PYKG2TBL_OUTPUT_FOLDER, name)
 
-# get the first date
-first_date = r_array[0]["modified"]["value"].split("T")[0]
-print(first_date)
-
-# round the first date to the nearest day in the future
-closest_end_date = datetime.datetime.strptime(first_date, "%Y-%m-%d %H:%M:%S.%f") + datetime.timedelta(hours=1)
-closest_begin_date = datetime.datetime.strptime(first_date, "%Y-%m-%d %H:%M:%S.%f") - datetime.timedelta(hours=1)
-
-print(closest_begin_date), print(closest_end_date)
-
-# take the last element of the array and do the same
-last_date = r_array[-1]["modified"]["value"].split("T")[0]
-print(last_date)
-
-furthest_end_date = datetime.datetime.strptime(last_date, "%Y-%m-%d %H:%M:%S.%f") + datetime.timedelta(hours=1)
-furthest_begin_date = datetime.datetime.strptime(last_date, "%Y-%m-%d %H:%M:%S.%f") - datetime.timedelta(hours=1)
-
-print(furthest_begin_date), print(furthest_end_date)
-
-# make an array of all the dates in between the first and last date per hour
-date_array = []
-date_array.append(closest_begin_date)
-while date_array[-1] > furthest_end_date:
-    date_array.append(date_array[-1] - datetime.timedelta(hours=1))
-date_array.pop(-1)
-date_array.append(furthest_begin_date)
-print(len(date_array))
-
-# loop through the date array and find the results that match the date
-# if no results are found, then the date is skipped
-# if results are found, then the results are added to the array
-# the array is then added to the json file
-# the json file is then written to a file
-
-# create a new array to store the results
-new_array = []
-
-# loop through the date array
-for date in date_array:
-    next_date = date - datetime.timedelta(hours=1)
-    following_date = date - datetime.timedelta(hours=2)
-    # print(date)
-    # print(next_date)
-    # create a new array to store the results for that date
-    date_results = []
-    # loop through the results array
-    date_bigger = True
-    result_found = False
-    for result in r_array:
-        
-        if date_bigger == True:
-            # check if the date is smaller then the current date but larger then the next date if it exists
-            if datetime.datetime.strptime(result["modified"]["value"].split("T")[0], "%Y-%m-%d %H:%M:%S.%f") < date and datetime.datetime.strptime(result["modified"]["value"].split("T")[0], "%Y-%m-%d %H:%M:%S.%f") > next_date:
-                # add the result to the date results array
-                date_results.append(result)
-                r_array.remove(result)
-                result_found = True
+def make_pykg2tbl_files(collections, begin_date, end_date):
+    # for each collection
+    for collection in collections:
+        # devide the time period into 1 year
+        # for each year
+        first = True
+        for year in range(int(begin_date[:4]), int(end_date[:4])+1):
+            # make the begin and end date for the year
+            begin_date_year = str(year) + "-01-01 00:00:00"
+            end_date_year = str(year) + "-12-31 00:00:00"
+            prev_year = year - 1
+            
+            this_delta = str(year) + "-01-01 00:00:00" + "_" + str(year) + "-12-31 00:00:00"
+            this_delta_quoted = urllib.parse.quote(this_delta)
+            next_delta_quoted = ""
+            if not first:
+                next_delta = str(prev_year) + "-12-31 00:00:00" + "_" + str(year) + "-01-01 00:00:00"
+                next_delta_quoted = urllib.parse.quote(next_delta)
+            if first:
+                first = False
+            
+            # check if end date is greater than the end date of the time period
+            if year == int(end_date[:4]):
+                end_date_year = end_date
+                
+            
+            # check if begin date is less than the begin date of the time period
+            if year == int(begin_date[:4]):
+                begin_date_year = begin_date
+            # make the sparql query
+            DATAFRAME = execute_to_df(
+                "collection-changes-between-delta-period.sparql",
+                collection= collection,
+                date1= begin_date_year,
+                date2= end_date_year
+            )
+            print(DATAFRAME)
+            # convert dataframe to json
+            json_records = make_json(DATAFRAME)
+            # save json to file
+            json_file_loc = save_json(json_records, collection, begin_date_year, end_date_year)
+            
+            begin_delta = datetime.datetime.strptime(begin_date_year, "%Y-%m-%d %H:%M:%S")
+            
+            name_ttl = collection + "_" + begin_date + "_" + end_date + ".ttl"
+            formatted_name = this_delta.replace(":", "-")
+            formatted_name = formatted_name.replace("-", "_")
+            formatted_name = formatted_name.replace(" ", "_")
+            formatted_name = collection + "_" + formatted_name + ".ttl"
+            output_file = os.path.join(PYSUBYT_OUTPUT_FOLDER, formatted_name)
+            
+            if not first:
+                os.system(f"python -m pysubyt \
+                        -v this_fragment_delta \"{str(this_delta_quoted)}\" \
+                        -v next_fragment_delta \"{str(next_delta_quoted)}\" \
+                        -v retention_period \"{str(retention_period)}\" \
+                        -t ./pysubyt \
+                        -s qres " + str(json_file_loc) +" \
+                        -n ldes_fragment.ttl \
+                        -o "+ str(output_file)
+                        )
             else:
-                if result_found:
-                    date_bigger = False
-                    print(len(r_array))
-    # add the date results array to the new array
-    if len(date_results) > 0:
-        date_str = str(next_date)+ "-" + str(date)
-        # convert str to uri compatible
-        date_str_uri = urllib.parse.quote(date_str)
-        previous_date = str(following_date) + "-" + str(next_date)
-        previous_date_uri = urllib.parse.quote(previous_date)
-        new_array.append({"date": date_str_uri,"results":date_results, "previous_date": previous_date_uri})
-        print(len(date_results))
-
-print(len(new_array))
-
-# write array to file as json
-with open(os.path.join(WD,"BODC_LDES_demo_sorted.json"), "w") as f:
-    json.dump(new_array, f, indent=4)
-
-# execute the following command 
-# delete the metadata.ttl file if it exists
-# python -m pysubyt -t ./pysubyt -s qres BODC_LDES_demo_sorted.json -n metadata.ttl -o metadata.ttl
-if os.path.exists(os.path.join(WD,"metadata.ttl")):
-    os.remove(os.path.join(WD,"metadata.ttl"))
-
-os.system("python -m pysubyt -t ./pysubyt -s qres BODC_LDES_demo_sorted.json -n metadata.ttl -o metadata.ttl")
-
-
-
-
+                os.system(f"python -m pysubyt \
+                        -v this_fragment_delta \"{str(this_delta_quoted)}\" \
+                        -v retention_period \"{str(retention_period)}\" \
+                        -t ./pysubyt \
+                        -s qres " + str(json_file_loc) +" \
+                        -n ldes_fragment.ttl \
+                        -o "+ str(output_file)
+                        )
+            time.sleep(1)
+            
+make_pykg2tbl_files(collections, begin_date, end_date)

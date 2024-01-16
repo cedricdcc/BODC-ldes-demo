@@ -1,0 +1,65 @@
+
+
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ldes: <https://w3id.org/ldes#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://vocab.nerc.ac.uk/ldes/feed/2012-01-01%2000%3A00%3A00_2012-12-31%2000%3A00%3A00>
+a tree:Node ;
+
+ldes:retentionPolicy [
+    a ldes:TimeBasedRetentionPolicy ;
+    ldes:timeBasedRetentionPeriod "1"^^xsd:duration ;
+] .
+<http://vocab.nerc.ac.uk/collection/P02/current/ADUN/>
+    a skos:Concept ;
+    dcat:modified "2012-07-17 07:51:20.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/AASD/>
+    a skos:Concept ;
+    dcat:modified "2012-03-02 16:22:50.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/SALK/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:27:53.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/CASD/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:21:17.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/TOCH/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:21:17.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/A01X/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:14:45.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/CAKN/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:12:48.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/CD10/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:10:50.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/F001/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:10:50.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/LIBI/>
+    a skos:Concept ;
+    dcat:modified "2012-03-01 16:10:50.0"^^xsd:dateTime ;
+    .
+<http://vocab.nerc.ac.uk/collection/P02/current/WBRX/>
+    a skos:Concept ;
+    dcat:modified "2012-02-16 09:27:29.0"^^xsd:dateTime ;
+    .

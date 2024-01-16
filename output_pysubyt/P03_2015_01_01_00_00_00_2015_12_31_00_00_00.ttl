@@ -1,0 +1,27 @@
+
+
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ldes: <https://w3id.org/ldes#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://vocab.nerc.ac.uk/ldes/feed/2015-01-01%2000%3A00%3A00_2015-12-31%2000%3A00%3A00>
+a tree:Node ;
+
+tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/2014-12-31%2000%3A00%3A00_2015-01-01%2000%3A00%3A00> ] ;
+
+ldes:retentionPolicy [
+    a ldes:TimeBasedRetentionPolicy ;
+    ldes:timeBasedRetentionPeriod "1"^^xsd:duration ;
+] .
+<http://vocab.nerc.ac.uk/collection/P03/current/B030/>
+    a skos:Concept ;
+    dcat:modified "2015-02-03 10:29:38.0"^^xsd:dateTime ;
+    .

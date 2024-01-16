@@ -1,0 +1,20 @@
+{# - Jinja template --> Sparql query
+ | Find all properties for a given collection between two dates
+ | @param collection: the collection
+ | @param date1: the first date
+ | @param date2: the second date
+#}
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skosc: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?id ?sid ?version ?modified WHERE {
+  ?id rdf:type skosc:Concept .
+  ?id dcterms:identifier ?sid .
+  ?id dcterms:date ?modified .
+  ?id <http://purl.org/pav/hasCurrentVersion> ?version
+  FILTER (REGEX(str(?id), "http://vocab.nerc.ac.uk/collection/{{collection}}/current/", "i") && ?modified >= "{{date1}}" && ?modified <= "{{date2}}")
+}
+ORDER BY DESC(?modified)

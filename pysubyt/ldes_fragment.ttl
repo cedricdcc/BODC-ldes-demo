@@ -1,3 +1,12 @@
+{#
+ldes fragment template
+| Description: This template is used to generate the LDES fragment
+| @param this_fragment_delta: The delta of this fragment
+| @param next_fragment_delta: The delta of the next fragment
+| @param retention_period: The retention period of the fragment
+| @param set['qres']: The query results
+#}
+
 @prefix tree: <https://w3id.org/tree#> .
 @prefix ldes: <https://w3id.org/ldes#> .
 @prefix dc: <http://purl.org/dc/terms/> .
@@ -10,21 +19,18 @@
 @prefix schema: <https://schema.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-<https://w3id.org/ldes/ldes#> a ldes:ApiEntryPoint ;
-    ldes:hasEntryPoint <https://w3id.org/ldes/ldes#entrypoint> .
-
-{% for result in sets['qres'] -%}
-<http://vocab.nerc.ac.uk/ldes/feed/{{result.date}}>
- a tree:Node ;
- tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/{{result.previous_date}}> ] ;
- ldes:retentionPolicy [
+<http://vocab.nerc.ac.uk/ldes/feed/{{this_fragment_delta}}>
+a tree:Node ;
+{% if next_fragment_delta %}
+tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/{{next_fragment_delta}}> ] ;
+{% endif %}
+ldes:retentionPolicy [
     a ldes:TimeBasedRetentionPolicy ;
     ldes:timeBasedRetentionPeriod "{{retention_period}}"^^xsd:duration ;
- ].
-{% for change in result.results -%}
-<{{change.id.value}}>
+] .
+{% for result in sets['qres'] -%}
+<{{result.id}}>
     a skos:Concept ;
-    dcat:modified "{{change.modified.value}}"^^xsd:dateTime ;
+    dcat:modified "{{result.modified}}"^^xsd:dateTime ;
     .
-{% endfor %}
 {% endfor %}
