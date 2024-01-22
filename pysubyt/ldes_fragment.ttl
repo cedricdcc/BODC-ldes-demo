@@ -3,34 +3,66 @@ ldes fragment template
 | Description: This template is used to generate the LDES fragment
 | @param this_fragment_delta: The delta of this fragment
 | @param next_fragment_delta: The delta of the next fragment
-| @param retention_period: The retention period of the fragment
 | @param set['qres']: The query results
 #}
-
 @prefix tree: <https://w3id.org/tree#> .
 @prefix ldes: <https://w3id.org/ldes#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix mr: <http://marineregions.org/ns/ontology#> .
-@prefix schema: <https://schema.org/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <http://vocab.nerc.ac.uk/ldes/feed/{{this_fragment_delta}}>
-a tree:Node ;
-{% if next_fragment_delta %}
-tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/{{next_fragment_delta}}> ] ;
-{% endif %}
-ldes:retentionPolicy [
-    a ldes:TimeBasedRetentionPolicy ;
-    ldes:timeBasedRetentionPeriod "{{retention_period}}"^^xsd:duration ;
-] .
+    a tree:Node ;
+    {% if next_fragment_delta %}
+    tree:relation [ tree:node <http://vocab.nerc.ac.uk/ldes/feed/{{next_fragment_delta}}> ] ;
+    {% endif %}
+    ldes:retentionPolicy [
+        a ldes:LatestVersionSubset ;
+        ldes:amount 1 ;
+        ldes:versionKey ( dc:isVersionOf )
+    ] .
+
+<http://vocab.nerc.ac.uk/ldes/feed>
+  a ldes:EventStream ;
+  tree:shape [
+    a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+      sh:datatype xsd:dateTime ;
+      sh:minCount 1 ;
+      sh:path dc:modified
+    ],
+    [
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:path skos:altLabel
+    ],
+    [
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:path skos:definition
+    ],
+    [
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:path skos:notation
+    ];
+    sh:targetClass skos:Concept
+  ] ;
+  tree:view <http://vocab.nerc.ac.uk/ldes/feed/{{this_fragment_delta}}> ;
+  {% for result in sets['qres'] -%}
+  tree:member <{{result.id}}> ;
+  {% endfor %}
+  .
+
 {% for result in sets['qres'] -%}
 <{{result.id}}>
     a skos:Concept ;
     dcat:modified "{{result.modified}}"^^xsd:dateTime ;
+    skos:altLabel "{{result.altlabel}}" ;
+    skos:definition "{{result.definition}}" ;
+    skos:notation "{{result.notation}}" ;
     .
 {% endfor %}

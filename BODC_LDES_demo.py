@@ -40,28 +40,6 @@ def execute_to_df(name: str, **vars) -> DataFrame:
     result: QueryResult = KGSOURCE.query(sparql)
     return result.to_dataframe()
 
-'''
-# test the sparql query
-# date should be in %Y-%m-%d %H:%M:%S
-
-print(
-    generate_sparql(
-        "collection-changes-between-delta-period.sparql",
-        collection= "P02",
-        date1= "2012-01-01 00:00:00",
-        date2= "2021-01-02 00:00:00"
-    )
-)
-
-DATAFRAME = execute_to_df(
-    "collection-changes-between-delta-period.sparql",
-    collection= "P02",
-    date1= "2012-01-01 00:00:00",
-    date2= "2021-01-02 00:00:00"
-)
-
-print(DATAFRAME)
-'''
 
 def make_json(DATAFRAME):
     # convert dataframe to json
