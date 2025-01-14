@@ -42,6 +42,11 @@ ldes fragment template
     [
       sh:datatype xsd:string ;
       sh:minCount 1 ;
+      sh:path skos:prefLabel
+    ],
+    [
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
       sh:path skos:definition
     ],
     [
@@ -61,6 +66,7 @@ ldes fragment template
 <{{result.id}}>
     a skos:Concept ;
     dcat:modified "{{result.modified}}"^^xsd:dateTime ;
+    skos:prefLabel "{{result.preflabel}}" ;
     skos:altLabel "{{result.altlabel}}" ;
     skos:definition "{{result.definition}}" ;
     skos:notation "{{result.notation}}" ;

@@ -10,11 +10,12 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skosc: <http://www.w3.org/2004/02/skos/core#>
-SELECT ?id ?sid ?version ?modified ?altlabel ?definition ?notation WHERE {
+SELECT ?id ?sid ?version ?modified ?preflabel ?altlabel ?definition ?notation WHERE {
   ?id rdf:type skosc:Concept .
   ?id dcterms:identifier ?sid .
   ?id dcterms:date ?modified .
   ?id skosc:altLabel ?altlabel .
+  ?id skosc:prefLabel ?preflabel .
   ?id skosc:definition ?definition .
   ?id skosc:notation ?notation .
   ?id <http://purl.org/pav/hasCurrentVersion> ?version
